@@ -41,7 +41,9 @@ const router = createBrowserRouter([
         path: ":id",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(
+            `https://developer-the-news-dragon-server-with-conte-sajjat-rahman-rohan.vercel.app/categories/${params.id}`
+          ),
       },
     ],
   },
@@ -57,30 +59,32 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/news/${params.id}`),
+          fetch(
+            `https://developer-the-news-dragon-server-with-conte-sajjat-rahman-rohan.vercel.app/news/${params.id}`
+          ),
       },
     ],
   },
-  {
-    path: "login",
-    element: <LoginLayout></LoginLayout>,
-    children: [
-      {
-        path: "/login",
-        element: <Login></Login>,
-      },
-    ],
-  },
-  {
-    path: "register",
-    element: <LoginLayout></LoginLayout>,
-    children: [
-      {
-        path: "/register",
-        element: <Register></Register>,
-      },
-    ],
-  },
+  // {
+  //   path: "login",
+  //   element: <LoginLayout></LoginLayout>,
+  //   children: [
+  //     {
+  //       path: "/login",
+  //       element: <Login></Login>,
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: "register",
+  //   element: <LoginLayout></LoginLayout>,
+  //   children: [
+  //     {
+  //       path: "/register",
+  //       element: <Register></Register>,
+  //     },
+  //   ],
+  // },
 ]);
 
 export default router;
